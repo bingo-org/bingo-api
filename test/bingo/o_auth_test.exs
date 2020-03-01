@@ -5,7 +5,7 @@ defmodule Bingo.OAuthTest do
 
   describe "verify/1" do
     test "it should retrieve an user with a valid google credential" do
-      valid_credential = %{"provider" => "google", "token" => "valid.google_token"}
+      valid_credential = %{"provider" => "google", "token" => "valid"}
       assert {:ok, user} = OAuth.verify(valid_credential)
       assert user.name
       assert user.email
@@ -20,14 +20,14 @@ defmodule Bingo.OAuthTest do
     end
 
     test "it should indicate that the token is not valid" do
-      invalid_credential = %{"provider" => "google", "token" => "invalid.google_token"}
+      invalid_credential = %{"provider" => "google", "token" => "invalid"}
 
       assert {:error, :invalid_credential, "Please provide a valid token."} ==
                OAuth.verify(invalid_credential)
     end
 
     test "it should indicate that the given provider is not supported" do
-      invalid_credential = %{"provider" => "facebook", "token" => "valid.facebook_token"}
+      invalid_credential = %{"provider" => "facebook", "token" => "valid"}
 
       assert {:error, :invalid_credential, "The facebook provider is not supported."} ==
                OAuth.verify(invalid_credential)

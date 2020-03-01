@@ -1,7 +1,7 @@
 defmodule Bingo.OAuth.MemoryClient do
   alias Bingo.OAuth.{Credential, User}
 
-  def verify(%Credential{provider: :google, token: "valid.google_token"}) do
+  def verify(%Credential{provider: :google, token: "valid"}) do
     user = %User{
       name: "Juan Jose Lopez Tugores",
       email: "tugorez@gmail.com",
