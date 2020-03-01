@@ -16,3 +16,6 @@ config :bingo, BingoWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Set memory client for tests
+config :bingo, :o_auth_client, Bingo.OAuth.MemoryClient
