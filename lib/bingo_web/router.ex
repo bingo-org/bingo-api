@@ -5,7 +5,9 @@ defmodule BingoWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/api", BingoWeb do
+  scope "/", BingoWeb do
     pipe_through :api
+
+    post "/sessions", SessionController, :create
   end
 end
