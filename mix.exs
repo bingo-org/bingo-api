@@ -43,7 +43,8 @@ defmodule Bingo.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
       {:poison, "~> 3.1"},
-      {:httpoison, "~> 1.4"}
+      {:httpoison, "~> 1.4"},
+      {:ex_machina, "~> 2.3", only: :test}
     ]
   end
 
